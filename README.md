@@ -5,16 +5,13 @@ It's build upon the official API documentation at https://github.com/ssllabs/ssl
 ```PHP
 <?php
 
-require_once 'sslLabsApi.php';
+require_once 'vendor/autoload.php';
 
 //Return API response as JSON string
-$api = new sslLabsApi();
+$api = new SslLabs();
 
 //Return API response as JSON object
-//$api = new sslLabsApi(true);
-
-//Set content-type header for JSON output
-header('Content-Type: application/json');
+//$api = new SslLabs(true);
 
 //get API information
 var_dump($api->fetchApiInfo());
