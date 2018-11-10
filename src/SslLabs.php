@@ -1,5 +1,7 @@
 <?php
 
+namespace VisualAppeal;
+
 class SslLabs
 {
     CONST API_URL = "https://api.ssllabs.com/api/v3";

@@ -2,6 +2,8 @@
 
 use PHPUnit\Framework\TestCase;
 
+use VisualAppeal\SslLabs;
+
 class SslLabsTest extends TestCase
 {
     /**
