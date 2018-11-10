@@ -19,17 +19,17 @@ var_dump($api->fetchApiInfo());
 ?>
 ```
 ## Methods
-### fetchApiInfo()
+### info()
 No parameters needed
 
 Returns an Info object (see https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md#info).
 
-### fetchStatusCodes()
+### getStatusCodes()
 No parameters needed
 
 Returns a StatusCodes instance (see https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md#statuscodes).
 
-### fetchHostInformation()
+### analyze()
 See https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md#invoke-assessment-and-check-progress for parameter description.
 
 | Parameter           | Type    | Default value |          |
@@ -46,7 +46,7 @@ Returns a Host object (see https://github.com/ssllabs/ssllabs-scan/blob/master/s
 
 Make sure to check the 'status' attribute inside Host object.
 
-### fetchHostInformationCached()
+### analyzeCached()
 You can also use fetchHostInformation() with the proper parameters, this is just a helper function.
 
 | Parameter           | Type    | Default value |          |
@@ -60,7 +60,7 @@ Returns a Host object (see https://github.com/ssllabs/ssllabs-scan/blob/master/s
 
 Also make sure to check the 'status' attribute inside Host object.
 
-### fetchEndpointData()
+### getEndpointData()
 See https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md#retrieve-detailed-endpoint-information for parameter description.
 
 | Parameter      | Type    | Default value |          |
@@ -83,20 +83,20 @@ Use sendApiRequest() method to create custom API calls.
 $api->sendApiRequest('apiCallName', array('p1' => 'p1_value', 'p2' => 'p2_value'));
 ```
 
-### getReturnJsonObjects()
-Getter for returnJsonObjects
+### getReturnObjects()
+Getter for returnObjects
 
-### setReturnJsonObjects()
-Setter for returnJsonObjects
+### setReturnObjects()
+Setter for returnObjects
 
 | Parameter             | Type    | Default value |          |
 |-----------------------|---------|---------------|----------|
-| **returnJsonObjects** | boolean |               | Required |
+| **returnObjects** | boolean |               | Required |
 
 ## Example output (as JSON strings)
 ### Get API information
 ```PHP
-$api->fetchApiInfo();
+$api->info();
 ```
 ```JSON
 {
@@ -113,7 +113,7 @@ $api->fetchApiInfo();
 
 ### Get host information
 ```PHP
-$api->fetchHostInformation('https://www.google.de');
+$api->analyze('https://www.google.de');
 ```
 ```JSON
 {
@@ -181,7 +181,7 @@ $api->fetchHostInformation('https://www.google.de');
 
 ### Get endpoint information
 ```PHP
-$api->fetchEndpointData('https://www.google.de', '74.125.239.111');
+$api->getEndpointData('https://www.google.de', '74.125.239.111');
 ```
 
 (just an except of the entire JSON output)
