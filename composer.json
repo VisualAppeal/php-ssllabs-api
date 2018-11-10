@@ -2,7 +2,7 @@
     "name": "visualappeal/php-ssllabs-api",
     "description": "API for ssllabs.com",
     "type": "library",
-    "license": "GPL",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Björn Roland",
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "\\": "src/"
         }
     },
     "require-dev": {
