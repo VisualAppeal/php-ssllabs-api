@@ -1,6 +1,12 @@
 # PHP-SSLLabs-API
 This PHP library provides basic access to the SSL Labs API.
 
+## Installation
+
+`composer require visualappeal/php-ssllabs-api`
+
+## Usage
+
 It's build upon the official API documentation at https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md
 ```PHP
 <?php
